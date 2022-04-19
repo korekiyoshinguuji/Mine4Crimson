@@ -1,2 +1,2 @@
-# Mine4Crimson
-A special crypto miner so Auri can $end to mommy while their PC suffers for him &lt;3
+# Mine4Glitch
+A special crypto miner so you bitches can $end to mommy while your PC suffers for me &lt;3
