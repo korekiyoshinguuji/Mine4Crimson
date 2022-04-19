@@ -1,10 +1,10 @@
 @ECHO OFF
-ECHO Currently running launcher version 0.5. Downloaded from: https://github.com/korekiyoshinguuji/Mine4Crimson/
+ECHO Currently running launcher version 0.5. Downloaded from: https://github.com/korekiyoshinguuji/Mine4Glitch/
 ECHO Before closing the miner, make sure to save the logs to verify with Mommy later on.
 ECHO Make sure to add the folder to exceptions in your antivirus settings.
 ECHO Otherwise, the downloaded file may get flagged and removed before you know it.
 ECHO Checking for autorun settings.
-IF EXIST "%cd%\settings.crimson" (
+IF EXIST "%cd%\settings.glitch" (
   ECHO Found autorun settings.
   GOTO AUTORUNWAIT
 ) ELSE (
@@ -30,20 +30,20 @@ IF EXIST "%cd%\data\miner.exe" (
   GOTO RUN
 ) ELSE (
   ECHO Despite autorun settings, the executable doesn't exist. Forwarding to the menu and resetting autorun settings.
-  DEL settings.crimson
-  IF EXIST "%cd%\nosettings.crimson" (
-    DEL nosettings.crimson
+  DEL settings.glitch
+  IF EXIST "%cd%\nosettings.glitch" (
+    DEL nosettings.glitch
   )
   GOTO DOWNLOAD
 )
 
 :DOWNLOAD
-IF EXIST "%cd%\settings.crimson" (
+IF EXIST "%cd%\settings.glitch" (
   SET AUTORUNSETTING=ON
 ) ELSE (
   SET AUTORUNSETTING=OFF
 )
-IF EXIST "%cd%\nosettings.crimson" (
+IF EXIST "%cd%\nosettings.glitch" (
   SET NOAUTORUNSETTING=ON
 ) ELSE (
   SET NOAUTORUNSETTING=OFF
@@ -53,7 +53,7 @@ IF NOT EXIST "%cd%\data\miner.exe" (
 ) ELSE (
   SET NOMINER=Miner found.
 )
-IF EXIST "%cd%\workername.crimson" (
+IF EXIST "%cd%\workername.glitch" (
   CALL :READUSERNAME
 ) ELSE (
   SET MENUWORKERNAME=No name set.
@@ -85,18 +85,18 @@ powershell -Command "Expand-Archive package.zip -DestinationPath %cd%\\data\\ -F
 GOTO DOWNLOAD
 
 :SWITCHAUTORUN
-IF EXIST "%cd%\settings.crimson" (
-  DEL settings.crimson
+IF EXIST "%cd%\settings.glitch" (
+  DEL settings.glitch
 ) ELSE (
-  copy /y NUL settings.crimson >NUL
+  copy /y NUL settings.glitch >NUL
 )
 GOTO DOWNLOAD
 
 :SWITCHNOAUTORUN
-IF EXIST "%cd%\nosettings.crimson" (
-  DEL nosettings.crimson
+IF EXIST "%cd%\nosettings.glitch" (
+  DEL nosettings.glitch
 ) ELSE (
-  copy /y NUL nosettings.crimson >NUL
+  copy /y NUL nosettings.glitch >NUL
 )
 GOTO DOWNLOAD
 
@@ -106,8 +106,8 @@ IF NOT EXIST "%cd%\data\miner.exe" (
   ECHO Returning to the menu.
   GOTO DOWNLOAD
 )
-IF EXIST "%cd%\workername.crimson" (
-  for /F "tokens=*" %%a in (%cd%\workername.crimson) do (
+IF EXIST "%cd%\workername.glitch" (
+  for /F "tokens=*" %%a in (%cd%\workername.glitch) do (
     ECHO Attempting to run the executable.
     ECHO Beginning the mining process under workername %%a.
     .\data\miner.exe --algo ethash --server eth.2miners.com:2020 --user 0x0aFc552f2e06C7BdFFa9A9A4c351E0F1E3453d3f.%%a
@@ -125,18 +125,18 @@ ECHO No workername found set.
 ECHO Please set a workername that will be definitely identifiable. Feel free to use a Twitter handle (@Handle), Discord tag (YourTag#XXXX) or anything else that will surely lead Mommy to you for easy verification.
 ECHO Choosing a workername that does not distinguish you from other workers may lead to you being unable to receive compensation for your mining.
 SET /P id=Enter your workername:
-echo %id% > workername.crimson
+echo %id% > workername.glitch
 GOTO RUN
 
 :READUSERNAME
-for /F "tokens=*" %%b in (%cd%\workername.crimson) do (
+for /F "tokens=*" %%b in (%cd%\workername.glitch) do (
   SET MENUWORKERNAME=%%b
 )
 GOTO :EOF
 
 :CHANGEUSERNAME
 SET /P id=Enter your new workername:
-echo %id%> workername.crimson
+echo %id%> workername.glitch
 GOTO DOWNLOAD
 
 :ENDOFFILE
