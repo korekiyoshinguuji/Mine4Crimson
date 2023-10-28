@@ -1,6 +1,6 @@
 @ECHO OFF
 ECHO Currently running launcher version 0.5. Downloaded from: https://github.com/korekiyoshinguuji/Mine4Glitch/
-ECHO Before closing the miner, make sure to save the logs to verify with Mommy later on.
+ECHO Before closing the miner, make sure to save the logs to verify with me later on.
 ECHO Make sure to add the folder to exceptions in your antivirus settings.
 ECHO Otherwise, the downloaded file may get flagged and removed before you know it.
 ECHO Checking for autorun settings.
@@ -122,8 +122,8 @@ GOTO ENDOFFILE
 
 :SETUSERNAME
 ECHO No workername found set.
-ECHO Please set a workername that will be definitely identifiable. Feel free to use a Twitter handle (@Handle), Discord tag (YourTag#XXXX) or anything else that will surely lead Mommy to you for easy verification.
-ECHO Choosing a workername that does not distinguish you from other workers may lead to you being unable to receive compensation for your mining.
+ECHO Please set a workername that will be definitely identifiable. Feel free to use a Twitter handle (@Handle), Discord tag (YourTag#XXXX) or anything else that will make it easier for me to identify you.
+ECHO Try to choose a unique name for your own sake.
 SET /P id=Enter your workername:
 echo %id% > workername.glitch
 GOTO RUN
