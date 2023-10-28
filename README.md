@@ -1,2 +1,2 @@
 # Mine4Glitch
-A special crypto miner so you bitches can $end to mommy while your PC suffers for me &lt;3
+This is a crypto miner. Works best with a good rig. This software is launched and used for MY benefit. You will not reap any of the potential profits that you sow.
